@@ -8,14 +8,14 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            background: #0F0F1A;
-            color: #E0E0EE;
+            background: #0B1424;
+            color: #F3F1EC;
             line-height: 1.7;
             padding: 0;
         }
         .header {
-            background: linear-gradient(135deg, #1A1A2E 0%, #0F0F1A 100%);
-            border-bottom: 1px solid #2D2D4A;
+            background: linear-gradient(135deg, #121E33 0%, #0B1424 100%);
+            border-bottom: 1px solid #23324F;
             padding: 40px 20px;
             text-align: center;
         }
@@ -26,7 +26,7 @@
             margin-bottom: 8px;
         }
         .header .subtitle {
-            color: #6C63FF;
+            color: #2BB3BF;
             font-size: 14px;
             font-weight: 500;
         }
@@ -37,7 +37,7 @@
         }
         .update-date {
             text-align: center;
-            color: #6B6B8D;
+            color: #7C879C;
             font-size: 13px;
             margin-bottom: 32px;
         }
@@ -47,37 +47,37 @@
             font-weight: 600;
             margin: 32px 0 12px;
             padding-bottom: 8px;
-            border-bottom: 1px solid #2D2D4A;
+            border-bottom: 1px solid #23324F;
         }
         h3 {
-            color: #B0B0CC;
+            color: #B7C0D0;
             font-size: 16px;
             font-weight: 600;
             margin: 20px 0 8px;
         }
-        p { margin: 8px 0; color: #B0B0CC; }
+        p { margin: 8px 0; color: #B7C0D0; }
         ul {
             margin: 8px 0 8px 24px;
-            color: #B0B0CC;
+            color: #B7C0D0;
         }
         li { margin: 4px 0; }
-        strong { color: #E0E0EE; }
-        a { color: #6C63FF; text-decoration: none; }
+        strong { color: #F3F1EC; }
+        a { color: #2BB3BF; text-decoration: none; }
         a:hover { text-decoration: underline; }
         .highlight {
-            background: #1A1A2E;
-            border: 1px solid #2D2D4A;
+            background: #121E33;
+            border: 1px solid #23324F;
             border-radius: 12px;
             padding: 16px 20px;
             margin: 16px 0;
         }
-        .highlight p { color: #B0B0CC; }
+        .highlight p { color: #B7C0D0; }
         .footer {
             text-align: center;
             padding: 24px;
-            color: #6B6B8D;
+            color: #7C879C;
             font-size: 12px;
-            border-top: 1px solid #2D2D4A;
+            border-top: 1px solid #23324F;
             margin-top: 40px;
         }
     </style>
@@ -90,7 +90,7 @@
 </div>
 
 <div class="container">
-    <p class="update-date">Son güncelleme: 10 Mart 2026</p>
+    <p class="update-date">Son güncelleme: 24 Eylül 2026 (sürüm 1.2.0)</p>
 
     <div class="highlight">
         <p><strong>Özet:</strong> HatırLat uygulaması, verilerinizi cihazınızda yerel olarak saklar. Kişisel bilgilerinizi toplamaz, sunuculara göndermez veya üçüncü taraflarla paylaşmaz. Uygulama, reklam gösterimi için Google AdMob kullanmaktadır.</p>
@@ -109,7 +109,10 @@
         <li>Kategori ve öncelik bilgileri</li>
         <li>Tekrarlama ayarları</li>
         <li>Tamamlanma istatistikleri</li>
-        <li>Uygulama tema tercihi (koyu/açık mod)</li>
+        <li>Uygulama tema tercihi (sistem/açık/koyu) ve vurgu rengi</li>
+        <li>Ödeme hatırlatıcılarına girdiğiniz tutarlar (TL)</li>
+        <li>Namaz vakitleri modülü için seçtiğiniz il (konum izni istenmez; vakitler cihazınızda hesaplanır)</li>
+        <li>Uygulama kilidi PIN'inin tek yönlü özeti (PIN'in kendisi saklanmaz)</li>
     </ul>
 
     <h3>2.2 Otomatik Olarak Toplanan Bilgiler</h3>
@@ -120,6 +123,7 @@
         <li><strong>Titreşim (VIBRATE):</strong> Bildirim titreşimi için</li>
         <li><strong>Cihaz Açılışında Başlatma (RECEIVE_BOOT_COMPLETED):</strong> Cihaz yeniden başlatıldığında hatırlatıcıları yeniden planlamak için</li>
         <li><strong>Uyandırma Kilidi (WAKE_LOCK):</strong> Arka plan görevlerinin güvenilir çalışması için</li>
+        <li><strong>Biyometrik doğrulama (USE_BIOMETRIC):</strong> İsteğe bağlı uygulama kilidini parmak izinizle açmak için. Doğrulama tamamen Android tarafından yapılır; parmak izi verilerinize uygulamanın erişimi yoktur.</li>
     </ul>
 
     <h3>2.3 Reklam Hizmetleri</h3>
@@ -132,19 +136,25 @@
     </ul>
     <p>Google'ın gizlilik politikası için: <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a></p>
 
+    <h3>2.4 Bildirimler</h3>
+    <p>Tüm hatırlatma ve namaz vakti bildirimleri cihazınızda yerel olarak zamanlanır. Uygulama uzaktan (push) bildirim kullanmaz ve herhangi bir bildirim kimliği (token) oluşturmaz veya sunucuya göndermez.</p>
+
+    <h3>2.5 Uygulama İçi Satın Alımlar (HatırLat Pro)</h3>
+    <p>HatırLat Pro abonelik ve tek seferlik satın alımları tamamen <strong>Google Play</strong> üzerinden işlenir. Ödeme ve kart bilgileriniz Google tarafından işlenir; bu bilgiler uygulamaya veya bize iletilmez. Uygulama yalnızca Pro özelliklerini açmak için satın alımın geçerli olup olmadığını cihazınızda kontrol eder. Aboneliklerinizi Google Play › Abonelikler bölümünden yönetebilir ve iptal edebilirsiniz.</p>
+
     <h2>3. Verilerin Kullanımı</h2>
     <p>Yerel olarak saklanan verileriniz yalnızca şu amaçlarla kullanılır:</p>
     <ul>
         <li>Hatırlatıcılarınızı oluşturmak, düzenlemek ve görüntülemek</li>
         <li>Zamanında bildirim göndermek</li>
         <li>İstatistik ve kullanım özetleri sunmak</li>
-        <li>Yedekleme ve geri yükleme işlemleri (yalnızca kullanıcı talebiyle)</li>
+        <li>Yedekleme ve geri yükleme işlemleri (yalnızca kullanıcı talebiyle; yedek dosyası sizin seçtiğiniz yere kaydedilir)</li>
     </ul>
 
     <h2>4. Veri Paylaşımı</h2>
     <div class="highlight">
         <p>HatırLat, kişisel verilerinizi <strong>hiçbir üçüncü tarafla paylaşmaz</strong>. Tüm hatırlatıcı verileri cihazınızda yerel olarak saklanır ve sunuculara gönderilmez.</p>
-        <p>Tek istisna, Google AdMob reklam hizmeti tarafından toplanan anonim reklam verileridir (bkz. Bölüm 2.3).</p>
+        <p>Tek istisna, reklam gösterimi için Google AdMob tarafından toplanan reklam verileridir. Uygulama kişiselleştirilmemiş reklam talep eder. Avrupa Ekonomik Alanı'ndaki kullanıcılardan Google'ın onay (UMP) formu ile izin istenir.</p>
     </div>
 
     <h2>5. Veri Güvenliği</h2>
@@ -153,21 +163,24 @@
     <h2>6. Veri Silme</h2>
     <p>Verilerinizi silmek için:</p>
     <ul>
-        <li>Uygulamayı cihazınızdan kaldırabilirsiniz (tüm veriler silinir)</li>
+        <li>Uygulamayı cihazınızdan kaldırabilirsiniz (tüm veriler cihaz ile birlikte silinir)</li>
         <li>Uygulama içinden bireysel hatırlatıcıları silebilirsiniz</li>
-        <li>Ayarlar bölümünden tüm verileri sıfırlayabilirsiniz</li>
+        <li>Ayarlar bölümünden tüm verileri güvenle sıfırlayabilirsiniz</li>
     </ul>
 
-    <h2>7. Çocukların Gizliliği</h2>
+    <h2>7. KVKK Kapsamındaki Haklarınız</h2>
+    <p>6698 sayılı Kişisel Verilerin Korunması Kanunu kapsamında verilerinize ilişkin bilgi talep etme, düzeltme ve silme haklarına sahipsiniz. HatırLat verilerinizi sunucularda tutmadığından bu hakları doğrudan uygulama içinden (düzenleme, silme, "Tüm verileri sil") kullanabilirsiniz. Reklam verileriyle ilgili talepler için Google'ın gizlilik araçlarını kullanabilirsiniz.</p>
+
+    <h2>8. Çocukların Gizliliği</h2>
     <p>Uygulama, 13 yaşın altındaki çocuklara yönelik değildir ve bilerek çocuklardan kişisel bilgi toplamaz.</p>
 
-    <h2>8. Değişiklikler</h2>
+    <h2>9. Değişiklikler</h2>
     <p>Bu gizlilik politikası zaman zaman güncellenebilir. Değişiklikler bu sayfada yayınlanacaktır. Uygulamayı kullanmaya devam etmeniz, güncellenmiş politikayı kabul ettiğiniz anlamına gelir.</p>
 
-    <h2>9. İletişim</h2>
+    <h2>10. İletişim</h2>
     <p>Gizlilik politikası hakkında sorularınız için bizimle iletişime geçebilirsiniz:</p>
     <ul>
-        <li>E-posta: <a href="mailto:hatirlat.app@gmail.com">hatirlat.app@gmail.com</a></li>
+        <li>E-posta: <a href="mailto:lokums.055@gmail.com">lokums.055@gmail.com</a></li>
     </ul>
 
     <div class="footer">
